@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Second example</title>
+</head>
+
+<body data-portal-component-type="page" style="background: lightpink;">
+<main data-portal-region="main">
+  <header>
+    <h2>Admin menu</h2>
+    <ul>
+      <li><a href="#1">Admin link 1</a></li>
+      <li><a href="#2">Admin link 2</a></li>
+      <li><a href="#3">Admin link 3</a></li>
+      <li><a href="#4">Admin link 4</a></li>
+      <li><a href="#5">Admin link 5</a></li>
+    </ul>
+  </header>
+
+  <div
+    data-th-if="${mainRegion}"
+    data-th-each="component : ${mainRegion.components}"
+    data-th-remove="tag">
+
+    <div
+      data-portal-component="${component.path}"
+      data-th-remove="tag"
+    >
+      Content goes here...
+    </div>
+  </div>
+</main>
+</body>
+</html>
